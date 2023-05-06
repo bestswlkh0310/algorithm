@@ -1,7 +1,9 @@
+# 7567 - 그릇
 str = list(input())
-sum = 0
-cnt = 0
-for i in range(1, len(str)):
-    if str[i] != str[i - 1]:
-        sum += 10
-print(sum)
+now = str[0]
+s = 0
+for i in str:
+    if now == i: s += 5
+    else: s += 10
+    now = i
+print(s + 5)

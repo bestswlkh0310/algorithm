@@ -1,0 +1,5 @@
+a, b = map(int, input().split())
+mx = max(a, b)
+mn = min(a, b)
+sum = mx - 1 + mx * (mn - 1)
+print(sum)
