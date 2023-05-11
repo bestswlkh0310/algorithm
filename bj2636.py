@@ -23,8 +23,6 @@ while q:
             if arr[yw][xw] == 0:
                 visit[yw][xw] = True
                 q.append((yw, xw, n1))
-
-
 for i in arr:
     for j in i:
         print("%2d" %j, end=" ")
