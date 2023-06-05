@@ -25,8 +25,20 @@
 #
 # print(r)
 
-ar = {
-    "123":12
-}
-for i in ar.values():
-    print(i)
+
+
+# ar = {
+#     "123":12
+# }
+# for i in ar.values():
+#     print(i)
+
+
+# for i in range(100):
+#     print(i % 5)
+
+cnt = 0
+num = int(input())
+while True:
+    print(cnt % num)
+    cnt += 1
