@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../AI/pytorch"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
