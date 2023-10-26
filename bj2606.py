@@ -7,7 +7,7 @@ for i in range(k):
     a, b = map(int, input().split())
     node[a].append(b)
     node[b].append(a)
-
+visited[1] = True
 cnt = 0
 q = [node[1]]
 while len(q) != 0:
@@ -18,4 +18,4 @@ while len(q) != 0:
             visited[i] = True
             cnt += 1
             q.append(node[i])
-print(cnt - 1)
+print(cnt)
