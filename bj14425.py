@@ -1,16 +1,14 @@
-import sys
 a, b = map(int, input().split())
 
-arr = [sys.stdin.readline() for _ in range(a)]
+arr = []
 cnt = 0
+
+for _ in range(a):
+    arr.append(input())
+
 for _ in range(b):
-    inp = sys.stdin.readline()
-    t = False
-    for s in arr:
-        if inp in s:
-            t = True
-            break
-    if t:
+    if input() in arr:
         cnt += 1
+
 
 print(cnt)
