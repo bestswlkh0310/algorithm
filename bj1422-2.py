@@ -14,10 +14,10 @@ newLst = sorted(lst, key=lambda x: 12 - len(str(x)))
 
 bst = newLst[0]
 
-for i in range(len(lst) - 1):
-    if int(str(lst[i]) + str(lst[i + 1])) < int(str(lst[i + 1]) + str(lst[i])):
-        # print('splited', lst[i], lst[i + 1])
-        lst[i], lst[i + 1] = lst[i + 1], lst[i]
+for j in range(len(lst) - 1):
+    for i in range(len(lst) - 1 - j):
+        if int(str(lst[i]) + str(lst[i + 1])) < int(str(lst[i + 1]) + str(lst[i])):
+            lst[i], lst[i + 1] = lst[i + 1], lst[i]
 # print(lst)
 t = False
 
@@ -26,3 +26,5 @@ for i in lst:
         print(str(i) * (n - k), end='')
         t = True
     print(i, end='')
+
+
