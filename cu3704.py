@@ -1,19 +1,16 @@
-result = 0
+n = int(input())
 
+arr = [0 for _ in range(max(4, n))]
+arr[0] = 1
+arr[1] = 2
+arr[2] = 4
 
-def A(n):
-    global result
-    if n <= 3:
-        result += 1
-        if n == 2:
-            A(n - 1)
-        if n == 3:
-            A(n - 1)
-            A(n - 2)
-    else:
-        A(n - 1)
-        A(n - 2)
-        A(n - 3)
-inp = int(input())
-A(inp)
-print(result % 1000)
+for i in range(3, n):
+    arr[i] = (arr[i - 1] + arr[i - 2] + arr[i - 3]) % 1000
+
+print(arr[n - 1] % 1000)
+
+# 1 1 1
+# 1 2
+# 2 1
+# 3
