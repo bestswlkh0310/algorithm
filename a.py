@@ -1,1 +1,0 @@
-print(sum([str(i).count('2') + str(i).count('4') + str(i).count('8') for i in range(1, int(input()) + 1)]))
