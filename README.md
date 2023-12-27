@@ -1,1 +1,4 @@
-# 백준 알고리즘 - Python
+# Algorithm problem solving
+
+- Baekjoon: hhhello0507
+- Code Up: hhhello
