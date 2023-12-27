@@ -2,36 +2,29 @@
 n = int(input())
 cnt = 0
 
-def show(ar):
-    ne = [['_'] * n for i in range(n)]
-    for i in ar:
-        ne[i[1]][i[0]] = '*'
-    for i in ne:
-        for j in i:
-            print("%2c"%j,end="")
-        print()
-    print()
-def A(ar, n1):
+row = [False for _ in range(n)]
+col = [False for _ in range(n)]
+f1 = [False for _ in range(n * 2)]
+f2 = [False for _ in range(n * 2)]
+
+cnt = 0
+def A(row, col, f1, f2, i):
     global cnt
-    if n1 == n:
-        # show(ar)
-        cnt += 1
-        return
-    for i in range(n):
-        for j in range(n):
-            t = True
-            for (y, x) in ar:
-                if i == y or j == x or i + j == y + x or i - j == y - x:
-                    t = False
-                    break
-            if t:
-                newArr = [(y1, x1) for (y1, x1) in ar]
-                newArr.append((i, j))
-                A(newArr, n1 + 1)
-
-
-for i in range(n):
     for j in range(n):
-        A([(i, j)], 1)
+        if not row[i] and not col[j] and not f1[i + j] and not f2[i - j + n]:
+            newR = row[:]
+            newC = col[:]
+            newF1 = f1[:]
+            newF2 = f2[:]
+            newR[i] = True
+            newC[j] = True
+            newF1[i + j] = True
+            newF2[i - j + n] = True
+            if i < n - 1:
+                A(newR, newC, newF1, newF2, i + 1)
+            else:
+                cnt += 1
 
+
+A(row, col, f1, f2, 0)
 print(cnt)
