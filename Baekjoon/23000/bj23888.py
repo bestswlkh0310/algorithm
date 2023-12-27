@@ -8,7 +8,4 @@ for _ in range(int(sys.stdin.readline())):
     if m == 1:
         print(v)
     else:
-        result = a + (s - 1) * d
-        for i in range(a + s * d, a + (e - 1) * d + 1, d):
-            result = math.gcd(result, i)
-        print(result)
+        print(math.gcd(a, a + d))
