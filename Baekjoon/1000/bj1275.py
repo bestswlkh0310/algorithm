@@ -31,6 +31,7 @@ def sub_sum(node, s, e, s1, e1):
 def update(node, s, e, idx, diff):
     if idx < s or idx > e: return
 
+
     T[node] += diff
 
     if s != e:
@@ -47,10 +48,7 @@ init_tree(1, 0, n - 1)
 
 for _ in range(q):
     x, y, a, b = map(int, input().split())
-
-    print(sub_sum(1, 0, n - 1, x - 1, y - 1))
+    print(sub_sum(1, 0, n - 1, min(x - 1, y - 1), max(x - 1, y - 1)))
     diff = b - lst[a - 1]
     lst[a - 1] = b
-    update(1, 0, n - 1, b, diff)
-
-
+    update(1, 0, n - 1, a - 1, diff)
